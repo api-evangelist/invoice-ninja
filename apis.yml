@@ -1,0 +1,68 @@
+aid: invoice-ninja
+name: Invoice Ninja
+description: >-
+  Invoice Ninja is an open-source invoicing, billing, payments, and
+  expense tracking platform for freelancers and small businesses,
+  available both as a self-hosted application and a managed SaaS at
+  invoicing.co. The Invoice Ninja v5 REST API exposes full CRUD access
+  to clients, invoices, quotes, payments, products, recurring invoices,
+  expenses, projects, and tasks, authenticated with an API token
+  (plus an optional secret) passed via HTTP headers.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Invoicing
+  - Billing
+  - Payments
+  - Accounting
+  - Open Source
+  - Freelancers
+  - SMB
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/invoice-ninja/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: invoice-ninja:v5-api
+    name: Invoice Ninja v5 API
+    description: >-
+      REST API for the Invoice Ninja v5 platform covering clients,
+      invoices, quotes, payments, products, recurring invoices,
+      credits, expenses, projects, tasks, and company settings.
+      Authentication is via an X-Api-Token header (with an optional
+      X-Api-Secret for self-hosted installs).
+    humanURL: https://api-docs.invoicing.co
+    baseURL: https://invoicing.co
+    tags:
+      - Invoicing
+      - Billing
+      - Payments
+      - Clients
+      - Products
+    properties:
+      - type: Documentation
+        url: https://api-docs.invoicing.co
+      - type: OpenAPI
+        url: https://app.swaggerhub.com/apis/invoiceninja/invoiceninja
+      - type: Developer Guide
+        url: https://invoiceninja.github.io/en/developer-guide/
+      - type: API Reference
+        url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+
+common:
+  - type: Website
+    url: https://www.invoiceninja.com
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Pricing
+    url: https://www.invoiceninja.com/pricing/
+  - type: Sign Up
+    url: https://app.invoicing.co/signup
+  - type: GitHub Organization
+    url: https://github.com/invoiceninja
+  - type: Source Code
+    url: https://github.com/invoiceninja/invoiceninja
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
