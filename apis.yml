@@ -51,6 +51,8 @@ apis:
         url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/invoice-ninja
   - type: Website
     url: https://www.invoiceninja.com
   - type: Documentation
