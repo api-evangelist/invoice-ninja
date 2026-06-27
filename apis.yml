@@ -59,7 +59,7 @@ common:
     url: https://api-docs.invoicing.co
   - type: Pricing
     url: https://www.invoiceninja.com/pricing/
-  - type: SignUp
+  - type: Signup
     url: https://app.invoicing.co/signup
   - type: GitHubOrganization
     url: https://github.com/invoiceninja
