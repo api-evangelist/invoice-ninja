@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/invoice-ninja-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiToken
+  type: apiKey
+  in: header
+  parameter: X-Api-Token
+  description: |-
+    API token created in the Invoice Ninja settings. Self-hosted installs
+    may additionally require an `X-Api-Secret` header.
+  sources:
+  - openapi/invoice-ninja-openapi.yml

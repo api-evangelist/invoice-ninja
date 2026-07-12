@@ -51,6 +51,12 @@ apis:
         url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
 
 common:
+  - type: DomainSecurity
+    url: security/invoice-ninja-domain-security.yml
+  - type: Authentication
+    url: authentication/invoice-ninja-authentication.yml
+  - url: https://www.invoiceninja.com/blog/feed/
+    type: Blog
   - type: LinkedIn
     url: https://www.linkedin.com/company/invoice-ninja
   - type: Website
