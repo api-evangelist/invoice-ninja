@@ -51,6 +51,8 @@ apis:
         url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/invoice-ninja-agentic-access.yml
   - type: DomainSecurity
     url: security/invoice-ninja-domain-security.yml
   - type: Authentication
