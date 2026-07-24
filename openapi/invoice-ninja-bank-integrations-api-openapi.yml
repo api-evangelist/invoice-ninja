@@ -1,0 +1,141 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Bank Integrations API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Bank Integrations
+paths:
+  /api/v1/bank_integrations:
+    get:
+      tags:
+      - Bank Integrations
+      summary: List bank integrations
+      operationId: listBankIntegrations
+      responses:
+        '200':
+          description: Bank integration list
+    post:
+      tags:
+      - Bank Integrations
+      summary: Create bank integration
+      operationId: createBankIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankIntegration'
+      responses:
+        '201':
+          description: Created
+  /api/v1/bank_integrations/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+      - Bank Integrations
+      summary: Get bank integration
+      operationId: getBankIntegration
+      responses:
+        '200':
+          description: Bank integration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankIntegration'
+    put:
+      tags:
+      - Bank Integrations
+      summary: Update bank integration
+      operationId: updateBankIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankIntegration'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags:
+      - Bank Integrations
+      summary: Delete bank integration
+      operationId: deleteBankIntegration
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/bank_integrations/refresh_accounts:
+    post:
+      tags:
+      - Bank Integrations
+      summary: Refresh bank accounts
+      operationId: refreshBankAccounts
+      responses:
+        '200':
+          description: Refresh result
+components:
+  schemas:
+    BankIntegration:
+      type: object
+      properties:
+        id:
+          type: string
+        provider_name:
+          type: string
+        bank_account_name:
+          type: string
+        bank_account_id:
+          type: string
+        bank_account_number:
+          type: string
+        bank_account_type:
+          type: string
+        balance:
+          type: number
+        currency:
+          type: string
+        nickname:
+          type: string
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '

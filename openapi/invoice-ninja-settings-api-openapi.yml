@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Settings API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Settings
+paths:
+  /api/v1/settings/passkeys:
+    get:
+      tags:
+      - Settings
+      summary: List passkeys
+      operationId: listPasskeys
+      responses:
+        '200':
+          description: Passkey list
+    post:
+      tags:
+      - Settings
+      summary: Register a passkey
+      operationId: createPasskey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Passkey created
+components:
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '

@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Bank Transactions API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Bank Transactions
+paths:
+  /api/v1/bank_transactions:
+    get:
+      tags:
+      - Bank Transactions
+      summary: List bank transactions
+      operationId: listBankTransactions
+      responses:
+        '200':
+          description: Transaction list
+    post:
+      tags:
+      - Bank Transactions
+      summary: Create bank transaction
+      operationId: createBankTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransaction'
+      responses:
+        '201':
+          description: Created
+  /api/v1/bank_transactions/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+      - Bank Transactions
+      summary: Get bank transaction
+      operationId: getBankTransaction
+      responses:
+        '200':
+          description: Bank transaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankTransaction'
+    put:
+      tags:
+      - Bank Transactions
+      summary: Update bank transaction
+      operationId: updateBankTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransaction'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags:
+      - Bank Transactions
+      summary: Delete bank transaction
+      operationId: deleteBankTransaction
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/bank_transactions/match:
+    post:
+      tags:
+      - Bank Transactions
+      summary: Match bank transactions to invoices/payments
+      operationId: matchBankTransactions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transactions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      invoice_ids:
+                        type: array
+                        items:
+                          type: string
+                      payment_id:
+                        type: string
+      responses:
+        '200':
+          description: Match result
+components:
+  schemas:
+    BankTransaction:
+      type: object
+      properties:
+        id:
+          type: string
+        bank_integration_id:
+          type: string
+        amount:
+          type: number
+        currency_id:
+          type: string
+        category_id:
+          type: string
+        date:
+          type: string
+          format: date
+        description:
+          type: string
+        base_type:
+          type: string
+          enum:
+          - CREDIT
+          - DEBIT
+        invoice_ids:
+          type: string
+        expense_id:
+          type: string
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '

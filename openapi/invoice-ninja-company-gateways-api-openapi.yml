@@ -1,0 +1,122 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Company Gateways API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Company Gateways
+paths:
+  /api/v1/company_gateways:
+    get:
+      tags:
+      - Company Gateways
+      summary: List company gateways
+      operationId: listCompanyGateways
+      responses:
+        '200':
+          description: Gateway list
+    post:
+      tags:
+      - Company Gateways
+      summary: Create company gateway
+      operationId: createCompanyGateway
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyGateway'
+      responses:
+        '201':
+          description: Created
+  /api/v1/company_gateways/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+      - Company Gateways
+      summary: Get company gateway
+      operationId: getCompanyGateway
+      responses:
+        '200':
+          description: Gateway
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyGateway'
+    put:
+      tags:
+      - Company Gateways
+      summary: Update company gateway
+      operationId: updateCompanyGateway
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyGateway'
+      responses:
+        '200':
+          description: Updated
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    CompanyGateway:
+      type: object
+      properties:
+        id:
+          type: string
+        gateway_key:
+          type: string
+        accepted_credit_cards:
+          type: integer
+        require_billing_address:
+          type: boolean
+        require_shipping_address:
+          type: boolean
+        update_details:
+          type: boolean
+        config:
+          type: string
+        fees_and_limits:
+          type: object
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '

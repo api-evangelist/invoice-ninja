@@ -1,0 +1,128 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Client Gateway Tokens API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Client Gateway Tokens
+paths:
+  /api/v1/client_gateway_tokens:
+    get:
+      tags:
+      - Client Gateway Tokens
+      summary: List client gateway tokens
+      operationId: listClientGatewayTokens
+      responses:
+        '200':
+          description: Token list
+    post:
+      tags:
+      - Client Gateway Tokens
+      summary: Create client gateway token
+      operationId: createClientGatewayToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientGatewayToken'
+      responses:
+        '201':
+          description: Created
+  /api/v1/client_gateway_tokens/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+      - Client Gateway Tokens
+      summary: Get client gateway token
+      operationId: getClientGatewayToken
+      responses:
+        '200':
+          description: Token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientGatewayToken'
+    put:
+      tags:
+      - Client Gateway Tokens
+      summary: Update client gateway token
+      operationId: updateClientGatewayToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientGatewayToken'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags:
+      - Client Gateway Tokens
+      summary: Delete client gateway token
+      operationId: deleteClientGatewayToken
+      responses:
+        '204':
+          description: Deleted
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ClientGatewayToken:
+      type: object
+      properties:
+        id:
+          type: string
+        client_id:
+          type: string
+        token:
+          type: string
+        gateway_customer_reference:
+          type: string
+        company_gateway_id:
+          type: string
+        gateway_type_id:
+          type: string
+        is_default:
+          type: boolean
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '

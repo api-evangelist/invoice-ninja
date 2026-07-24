@@ -1,0 +1,183 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 Activities Companies API
+  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
+
+    Endpoints cover authentication, companies, gateways, charts, activities,
+
+    bank integrations, bank transactions, bank transaction rules, and client
+
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+
+    clients, invoices, quotes, payments, products, recurring invoices,
+
+    credits, expenses, projects, tasks, and company settings.
+
+    Authentication is via an `X-Api-Token` header (with an optional
+
+    `X-Api-Secret` header for self-hosted installs).
+
+    '
+  version: '5.0'
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+- url: https://invoicing.co
+  description: Invoice Ninja hosted SaaS
+security:
+- apiToken: []
+tags:
+- name: Companies
+paths:
+  /api/v1/companies:
+    get:
+      tags:
+      - Companies
+      summary: List companies
+      operationId: listCompanies
+      responses:
+        '200':
+          description: Company list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyList'
+    post:
+      tags:
+      - Companies
+      summary: Create company
+      operationId: createCompany
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+      responses:
+        '201':
+          description: Company created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+  /api/v1/companies/{id}:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    get:
+      tags:
+      - Companies
+      summary: Get company
+      operationId: getCompany
+      responses:
+        '200':
+          description: Company
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+    put:
+      tags:
+      - Companies
+      summary: Update company
+      operationId: updateCompany
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+      responses:
+        '200':
+          description: Updated company
+    delete:
+      tags:
+      - Companies
+      summary: Delete company
+      operationId: deleteCompany
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/companies/{id}/upload:
+    parameters:
+    - $ref: '#/components/parameters/Id'
+    post:
+      tags:
+      - Companies
+      summary: Upload company documents
+      operationId: uploadCompanyDocuments
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Upload result
+  /api/v1/companies/current:
+    post:
+      tags:
+      - Companies
+      summary: Get current company
+      operationId: getCurrentCompany
+      responses:
+        '200':
+          description: Current company
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    CompanyList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+        company_key:
+          type: string
+        name:
+          type: string
+        size_id:
+          type: string
+        industry_id:
+          type: string
+        first_day_of_week:
+          type: string
+        first_month_of_year:
+          type: string
+        portal_mode:
+          type: string
+        portal_domain:
+          type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: 'API token created in the Invoice Ninja settings. Self-hosted installs
+
+        may additionally require an `X-Api-Secret` header.
+
+        '
