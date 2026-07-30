@@ -9,7 +9,19 @@ description: >-
   expenses, projects, and tasks, authenticated with an API token
   (plus an optional secret) passed via HTTP headers.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/invoice-ninja.png
 tags:
   - Invoicing
   - Billing
@@ -24,32 +36,168 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: invoice-ninja:v5-api
-    name: Invoice Ninja v5 API
-    description: >-
-      REST API for the Invoice Ninja v5 platform covering clients,
-      invoices, quotes, payments, products, recurring invoices,
-      credits, expenses, projects, tasks, and company settings.
-      Authentication is via an X-Api-Token header (with an optional
-      X-Api-Secret for self-hosted installs).
-    humanURL: https://api-docs.invoicing.co
-    baseURL: https://invoicing.co
-    tags:
-      - Invoicing
-      - Billing
-      - Payments
-      - Clients
-      - Products
-    properties:
-      - type: Documentation
-        url: https://api-docs.invoicing.co
-      - type: OpenAPI
-        url: https://app.swaggerhub.com/apis/invoiceninja/invoiceninja
-      - type: Developer Guide
-        url: https://invoiceninja.github.io/en/developer-guide/
-      - type: APIReference
-        url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
-
+- aid: invoice-ninja:invoice-ninja-activities-api
+  name: Invoice Ninja Activities API
+  description: The Activities API from Invoice Ninja — 3 operation(s) for activities.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Activities
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-activities-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-authentication-api
+  name: Invoice Ninja Authentication API
+  description: The Authentication API from Invoice Ninja — 2 operation(s) for authentication.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-bank-integrations-api
+  name: Invoice Ninja Bank Integrations API
+  description: The Bank Integrations API from Invoice Ninja — 3 operation(s) for bank integrations.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Bank Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-bank-integrations-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-bank-transaction-rules-api
+  name: Invoice Ninja Bank Transaction Rules API
+  description: >-
+    The Bank Transaction Rules API from Invoice Ninja — 2 operation(s) for bank transaction rules.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Bank Transaction Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-bank-transaction-rules-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-bank-transactions-api
+  name: Invoice Ninja Bank Transactions API
+  description: The Bank Transactions API from Invoice Ninja — 3 operation(s) for bank transactions.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Bank Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-bank-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-charts-api
+  name: Invoice Ninja Charts API
+  description: The Charts API from Invoice Ninja — 4 operation(s) for charts.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Charts
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-charts-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-client-gateway-tokens-api
+  name: Invoice Ninja Client Gateway Tokens API
+  description: >-
+    The Client Gateway Tokens API from Invoice Ninja — 2 operation(s) for client gateway tokens.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Client Gateway Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-client-gateway-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-companies-api
+  name: Invoice Ninja Companies API
+  description: The Companies API from Invoice Ninja — 4 operation(s) for companies.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-companies-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-company-gateways-api
+  name: Invoice Ninja Company Gateways API
+  description: The Company Gateways API from Invoice Ninja — 2 operation(s) for company gateways.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Company Gateways
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-company-gateways-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
+- aid: invoice-ninja:invoice-ninja-settings-api
+  name: Invoice Ninja Settings API
+  description: The Settings API from Invoice Ninja — 1 operation(s) for settings.
+  humanURL: https://api-docs.invoicing.co
+  baseURL: https://invoicing.co
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/invoice-ninja-settings-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.invoicing.co
+  - type: Developer Guide
+    url: https://invoiceninja.github.io/en/developer-guide/
+  - type: APIReference
+    url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
 common:
   - type: AgenticAccess
     url: agentic-access/invoice-ninja-agentic-access.yml
