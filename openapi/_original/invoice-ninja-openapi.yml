@@ -1,0 +1,811 @@
+openapi: 3.1.0
+info:
+  title: Invoice Ninja v5 API
+  description: |
+    REST API for the Invoice Ninja v5 invoicing and billing platform.
+    Endpoints cover authentication, companies, gateways, charts, activities,
+    bank integrations, bank transactions, bank transaction rules, and client
+    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
+    clients, invoices, quotes, payments, products, recurring invoices,
+    credits, expenses, projects, tasks, and company settings.
+    Authentication is via an `X-Api-Token` header (with an optional
+    `X-Api-Secret` header for self-hosted installs).
+  version: "5.0"
+  contact:
+    name: Invoice Ninja
+    url: https://api-docs.invoicing.co
+servers:
+  - url: https://invoicing.co
+    description: Invoice Ninja hosted SaaS
+security:
+  - apiToken: []
+tags:
+  - name: Authentication
+  - name: Activities
+  - name: Companies
+  - name: Company Gateways
+  - name: Client Gateway Tokens
+  - name: Bank Integrations
+  - name: Bank Transactions
+  - name: Bank Transaction Rules
+  - name: Charts
+  - name: Settings
+paths:
+  /api/v1/login:
+    post:
+      tags: [Authentication]
+      summary: Login
+      operationId: login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Authenticated user with tokens
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /api/v1/refresh:
+    post:
+      tags: [Authentication]
+      summary: Refresh data
+      description: Refresh data by timestamp.
+      operationId: refresh
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                updated_at:
+                  type: integer
+      responses:
+        '200':
+          description: Refreshed payload
+  /api/v1/activities:
+    get:
+      tags: [Activities]
+      summary: List activities
+      operationId: listActivities
+      responses:
+        '200':
+          description: Activity list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActivityList'
+  /api/v1/activities/download_entity/{activity_id}:
+    parameters:
+      - name: activity_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Activities]
+      summary: Download activity entity PDF
+      operationId: downloadActivityEntity
+      responses:
+        '200':
+          description: PDF file
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+  /api/v1/activities/entity:
+    post:
+      tags: [Activities]
+      summary: Get entity activities
+      operationId: getEntityActivity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entity:
+                  type: string
+                entity_id:
+                  type: string
+      responses:
+        '200':
+          description: Activity list
+  /api/v1/companies:
+    get:
+      tags: [Companies]
+      summary: List companies
+      operationId: listCompanies
+      responses:
+        '200':
+          description: Company list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyList'
+    post:
+      tags: [Companies]
+      summary: Create company
+      operationId: createCompany
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+      responses:
+        '201':
+          description: Company created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+  /api/v1/companies/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Companies]
+      summary: Get company
+      operationId: getCompany
+      responses:
+        '200':
+          description: Company
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+    put:
+      tags: [Companies]
+      summary: Update company
+      operationId: updateCompany
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Company'
+      responses:
+        '200':
+          description: Updated company
+    delete:
+      tags: [Companies]
+      summary: Delete company
+      operationId: deleteCompany
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/companies/{id}/upload:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    post:
+      tags: [Companies]
+      summary: Upload company documents
+      operationId: uploadCompanyDocuments
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Upload result
+  /api/v1/companies/current:
+    post:
+      tags: [Companies]
+      summary: Get current company
+      operationId: getCurrentCompany
+      responses:
+        '200':
+          description: Current company
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Company'
+  /api/v1/company_gateways:
+    get:
+      tags: [Company Gateways]
+      summary: List company gateways
+      operationId: listCompanyGateways
+      responses:
+        '200':
+          description: Gateway list
+    post:
+      tags: [Company Gateways]
+      summary: Create company gateway
+      operationId: createCompanyGateway
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyGateway'
+      responses:
+        '201':
+          description: Created
+  /api/v1/company_gateways/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Company Gateways]
+      summary: Get company gateway
+      operationId: getCompanyGateway
+      responses:
+        '200':
+          description: Gateway
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyGateway'
+    put:
+      tags: [Company Gateways]
+      summary: Update company gateway
+      operationId: updateCompanyGateway
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyGateway'
+      responses:
+        '200':
+          description: Updated
+  /api/v1/client_gateway_tokens:
+    get:
+      tags: [Client Gateway Tokens]
+      summary: List client gateway tokens
+      operationId: listClientGatewayTokens
+      responses:
+        '200':
+          description: Token list
+    post:
+      tags: [Client Gateway Tokens]
+      summary: Create client gateway token
+      operationId: createClientGatewayToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientGatewayToken'
+      responses:
+        '201':
+          description: Created
+  /api/v1/client_gateway_tokens/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Client Gateway Tokens]
+      summary: Get client gateway token
+      operationId: getClientGatewayToken
+      responses:
+        '200':
+          description: Token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientGatewayToken'
+    put:
+      tags: [Client Gateway Tokens]
+      summary: Update client gateway token
+      operationId: updateClientGatewayToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientGatewayToken'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Client Gateway Tokens]
+      summary: Delete client gateway token
+      operationId: deleteClientGatewayToken
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/bank_integrations:
+    get:
+      tags: [Bank Integrations]
+      summary: List bank integrations
+      operationId: listBankIntegrations
+      responses:
+        '200':
+          description: Bank integration list
+    post:
+      tags: [Bank Integrations]
+      summary: Create bank integration
+      operationId: createBankIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankIntegration'
+      responses:
+        '201':
+          description: Created
+  /api/v1/bank_integrations/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Bank Integrations]
+      summary: Get bank integration
+      operationId: getBankIntegration
+      responses:
+        '200':
+          description: Bank integration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankIntegration'
+    put:
+      tags: [Bank Integrations]
+      summary: Update bank integration
+      operationId: updateBankIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankIntegration'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Bank Integrations]
+      summary: Delete bank integration
+      operationId: deleteBankIntegration
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/bank_integrations/refresh_accounts:
+    post:
+      tags: [Bank Integrations]
+      summary: Refresh bank accounts
+      operationId: refreshBankAccounts
+      responses:
+        '200':
+          description: Refresh result
+  /api/v1/bank_transactions:
+    get:
+      tags: [Bank Transactions]
+      summary: List bank transactions
+      operationId: listBankTransactions
+      responses:
+        '200':
+          description: Transaction list
+    post:
+      tags: [Bank Transactions]
+      summary: Create bank transaction
+      operationId: createBankTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransaction'
+      responses:
+        '201':
+          description: Created
+  /api/v1/bank_transactions/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Bank Transactions]
+      summary: Get bank transaction
+      operationId: getBankTransaction
+      responses:
+        '200':
+          description: Bank transaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankTransaction'
+    put:
+      tags: [Bank Transactions]
+      summary: Update bank transaction
+      operationId: updateBankTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransaction'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Bank Transactions]
+      summary: Delete bank transaction
+      operationId: deleteBankTransaction
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/bank_transactions/match:
+    post:
+      tags: [Bank Transactions]
+      summary: Match bank transactions to invoices/payments
+      operationId: matchBankTransactions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transactions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      invoice_ids:
+                        type: array
+                        items:
+                          type: string
+                      payment_id:
+                        type: string
+      responses:
+        '200':
+          description: Match result
+  /api/v1/bank_transaction_rules:
+    get:
+      tags: [Bank Transaction Rules]
+      summary: List bank transaction rules
+      operationId: listBankTransactionRules
+      responses:
+        '200':
+          description: Rule list
+    post:
+      tags: [Bank Transaction Rules]
+      summary: Create bank transaction rule
+      operationId: createBankTransactionRule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransactionRule'
+      responses:
+        '201':
+          description: Created
+  /api/v1/bank_transaction_rules/{id}:
+    parameters:
+      - $ref: '#/components/parameters/Id'
+    get:
+      tags: [Bank Transaction Rules]
+      summary: Get rule
+      operationId: getBankTransactionRule
+      responses:
+        '200':
+          description: Rule
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankTransactionRule'
+    put:
+      tags: [Bank Transaction Rules]
+      summary: Update rule
+      operationId: updateBankTransactionRule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankTransactionRule'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Bank Transaction Rules]
+      summary: Delete rule
+      operationId: deleteBankTransactionRule
+      responses:
+        '204':
+          description: Deleted
+  /api/v1/charts/totals:
+    post:
+      tags: [Charts]
+      summary: Get chart totals
+      operationId: getChartTotals
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Chart totals
+  /api/v1/charts/totals_v2:
+    post:
+      tags: [Charts]
+      summary: Get chart totals (v2)
+      operationId: getChartTotalsV2
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Chart totals v2
+  /api/v1/charts/chart_summary_v2:
+    post:
+      tags: [Charts]
+      summary: Get chart summary (v2)
+      operationId: getChartSummaryV2
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Chart summary
+  /api/v1/charts/calculated_fields:
+    post:
+      tags: [Charts]
+      summary: Get chart calculated fields
+      operationId: getChartCalculatedFields
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Calculated fields
+  /api/v1/settings/passkeys:
+    get:
+      tags: [Settings]
+      summary: List passkeys
+      operationId: listPasskeys
+      responses:
+        '200':
+          description: Passkey list
+    post:
+      tags: [Settings]
+      summary: Register a passkey
+      operationId: createPasskey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Passkey created
+components:
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: X-Api-Token
+      description: |
+        API token created in the Invoice Ninja settings. Self-hosted installs
+        may additionally require an `X-Api-Secret` header.
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid API token
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        errors:
+          type: object
+          additionalProperties: true
+    Company:
+      type: object
+      properties:
+        id:
+          type: string
+        company_key:
+          type: string
+        name:
+          type: string
+        size_id:
+          type: string
+        industry_id:
+          type: string
+        first_day_of_week:
+          type: string
+        first_month_of_year:
+          type: string
+        portal_mode:
+          type: string
+        portal_domain:
+          type: string
+    CompanyList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
+    CompanyGateway:
+      type: object
+      properties:
+        id:
+          type: string
+        gateway_key:
+          type: string
+        accepted_credit_cards:
+          type: integer
+        require_billing_address:
+          type: boolean
+        require_shipping_address:
+          type: boolean
+        update_details:
+          type: boolean
+        config:
+          type: string
+        fees_and_limits:
+          type: object
+    ClientGatewayToken:
+      type: object
+      properties:
+        id:
+          type: string
+        client_id:
+          type: string
+        token:
+          type: string
+        gateway_customer_reference:
+          type: string
+        company_gateway_id:
+          type: string
+        gateway_type_id:
+          type: string
+        is_default:
+          type: boolean
+    Activity:
+      type: object
+      properties:
+        id:
+          type: string
+        activity_type_id:
+          type: string
+        client_id:
+          type: string
+        user_id:
+          type: string
+        invoice_id:
+          type: string
+        payment_id:
+          type: string
+        notes:
+          type: string
+        created_at:
+          type: integer
+    ActivityList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
+    BankIntegration:
+      type: object
+      properties:
+        id:
+          type: string
+        provider_name:
+          type: string
+        bank_account_name:
+          type: string
+        bank_account_id:
+          type: string
+        bank_account_number:
+          type: string
+        bank_account_type:
+          type: string
+        balance:
+          type: number
+        currency:
+          type: string
+        nickname:
+          type: string
+    BankTransaction:
+      type: object
+      properties:
+        id:
+          type: string
+        bank_integration_id:
+          type: string
+        amount:
+          type: number
+        currency_id:
+          type: string
+        category_id:
+          type: string
+        date:
+          type: string
+          format: date
+        description:
+          type: string
+        base_type:
+          type: string
+          enum: [CREDIT, DEBIT]
+        invoice_ids:
+          type: string
+        expense_id:
+          type: string
+    BankTransactionRule:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        rules:
+          type: array
+          items:
+            type: object
+            properties:
+              search_key:
+                type: string
+              operator:
+                type: string
+              value:
+                type: string
+        auto_convert:
+          type: boolean
+        matches_on_all:
+          type: boolean
+        applies_to:
+          type: string
+          enum: [CREDIT, DEBIT]
+        client_id:
+          type: string
+        vendor_id:
+          type: string
+        category_id:
+          type: string

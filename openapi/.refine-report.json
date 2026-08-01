@@ -1,0 +1,32 @@
+{
+  "provider": "invoice-ninja",
+  "sources": [
+    "invoice-ninja-activities-api-openapi.yml",
+    "invoice-ninja-authentication-api-openapi.yml",
+    "invoice-ninja-bank-integrations-api-openapi.yml",
+    "invoice-ninja-bank-transaction-rules-api-openapi.yml",
+    "invoice-ninja-bank-transactions-api-openapi.yml",
+    "invoice-ninja-charts-api-openapi.yml",
+    "invoice-ninja-client-gateway-tokens-api-openapi.yml",
+    "invoice-ninja-companies-api-openapi.yml",
+    "invoice-ninja-company-gateways-api-openapi.yml",
+    "invoice-ninja-settings-api-openapi.yml"
+  ],
+  "outputs": [
+    "invoice-ninja-activities-api-openapi.yml",
+    "invoice-ninja-authentication-api-openapi.yml",
+    "invoice-ninja-bank-integrations-api-openapi.yml",
+    "invoice-ninja-bank-transaction-rules-api-openapi.yml",
+    "invoice-ninja-bank-transactions-api-openapi.yml",
+    "invoice-ninja-charts-api-openapi.yml",
+    "invoice-ninja-client-gateway-tokens-api-openapi.yml",
+    "invoice-ninja-companies-api-openapi.yml",
+    "invoice-ninja-company-gateways-api-openapi.yml",
+    "invoice-ninja-settings-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
