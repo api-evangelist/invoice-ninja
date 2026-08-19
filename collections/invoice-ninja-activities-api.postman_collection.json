@@ -1,0 +1,321 @@
+{
+  "item": [
+    {
+      "id": "e3b2b87a-99a2-49f2-bcc1-5154e2d7d7a1",
+      "name": "Activities",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a7c4076-f3bb-4f68-a505-44c8ac6ab1ca",
+          "name": "List activities",
+          "request": {
+            "name": "List activities",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b0981c6-aefa-456a-ac7a-ee22d6280b3c",
+              "name": "Activity list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"activity_type_id\": \"string\",\n      \"client_id\": \"string\",\n      \"user_id\": \"string\",\n      \"invoice_id\": \"string\",\n      \"payment_id\": \"string\",\n      \"notes\": \"string\",\n      \"created_at\": 1648\n    },\n    {\n      \"id\": \"string\",\n      \"activity_type_id\": \"string\",\n      \"client_id\": \"string\",\n      \"user_id\": \"string\",\n      \"invoice_id\": \"string\",\n      \"payment_id\": \"string\",\n      \"notes\": \"string\",\n      \"created_at\": 1462\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "673fbc8e-18c2-451d-acee-6fffad1f6112",
+          "name": "Download activity entity PDF",
+          "request": {
+            "name": "Download activity entity PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activities",
+                "download_entity",
+                ":activity_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "activity_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b160296b-c891-469b-b1ed-8b9af848cc3e",
+              "name": "PDF file",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activities",
+                    "download_entity",
+                    ":activity_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "activity_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90cc5763-bbcf-418f-85f6-f387a5d54776",
+          "name": "Get entity activities",
+          "request": {
+            "name": "Get entity activities",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "activities",
+                "entity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity\": \"<string>\",\n  \"entity_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "933337d2-ee9a-464d-ad4e-43614067da87",
+              "name": "Activity list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "activities",
+                    "entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity\": \"<string>\",\n  \"entity_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://invoicing.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9ae1ad6d-faaf-4710-a013-a2deb3e9c07f",
+    "name": "Invoice Ninja v5 Activities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Invoice Ninja v5 invoicing and billing platform.\nEndpoints cover authentication, companies, gateways, charts, activities,\nbank integrations, bank transactions, bank transaction rules, and client\ngateway tokens. The full v5 API additionally exposes CRUD endpoints for\nclients, invoices, quotes, payments, products, recurring invoices,\ncredits, expenses, projects, tasks, and company settings.\nAuthentication is via an `X-Api-Token` header (with an optional\n`X-Api-Secret` header for self-hosted installs).\n\n\nContact Support:\n Name: Invoice Ninja",
+      "type": "text/plain"
+    }
+  }
+}

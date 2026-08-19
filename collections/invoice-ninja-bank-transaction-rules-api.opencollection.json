@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Bank Transaction Rules API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bank Transaction Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bank transaction rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_transaction_rules"
+          },
+          "docs": "List bank transaction rules"
+        },
+        {
+          "info": {
+            "name": "Create bank transaction rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/bank_transaction_rules",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bank transaction rule"
+        },
+        {
+          "info": {
+            "name": "Get rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_transaction_rules/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get rule"
+        },
+        {
+          "info": {
+            "name": "Update rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://invoicing.co/api/v1/bank_transaction_rules/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update rule"
+        },
+        {
+          "info": {
+            "name": "Delete rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://invoicing.co/api/v1/bank_transaction_rules/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete rule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

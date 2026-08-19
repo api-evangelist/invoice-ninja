@@ -1,0 +1,575 @@
+{
+  "item": [
+    {
+      "id": "9104070c-42c2-4559-93ed-34a5dcf56ce4",
+      "name": "Bank Integrations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27bbdb66-5a4a-4a36-8a59-759e06c06377",
+          "name": "List bank integrations",
+          "request": {
+            "name": "List bank integrations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29dcdecb-cb2f-49ea-b8fe-3ac24e1ba002",
+              "name": "Bank integration list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b33b088f-9b40-461e-a026-731451debf90",
+          "name": "Create bank integration",
+          "request": {
+            "name": "Create bank integration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"bank_account_name\": \"<string>\",\n  \"bank_account_id\": \"<string>\",\n  \"bank_account_number\": \"<string>\",\n  \"bank_account_type\": \"<string>\",\n  \"balance\": \"<number>\",\n  \"currency\": \"<string>\",\n  \"nickname\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "094850d5-4bb2-49c2-9b18-bbb6c8b7b9ee",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"bank_account_name\": \"<string>\",\n  \"bank_account_id\": \"<string>\",\n  \"bank_account_number\": \"<string>\",\n  \"bank_account_type\": \"<string>\",\n  \"balance\": \"<number>\",\n  \"currency\": \"<string>\",\n  \"nickname\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3076f030-a901-4ed6-ba20-b1256d3ee177",
+          "name": "Get bank integration",
+          "request": {
+            "name": "Get bank integration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f648773f-4f9c-4dfc-961f-be3af01f1754",
+              "name": "Bank integration",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"provider_name\": \"string\",\n  \"bank_account_name\": \"string\",\n  \"bank_account_id\": \"string\",\n  \"bank_account_number\": \"string\",\n  \"bank_account_type\": \"string\",\n  \"balance\": 4775.095278015986,\n  \"currency\": \"string\",\n  \"nickname\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50af2914-0f62-4c15-8de1-4ec3ea0c47f1",
+          "name": "Update bank integration",
+          "request": {
+            "name": "Update bank integration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"bank_account_name\": \"<string>\",\n  \"bank_account_id\": \"<string>\",\n  \"bank_account_number\": \"<string>\",\n  \"bank_account_type\": \"<string>\",\n  \"balance\": \"<number>\",\n  \"currency\": \"<string>\",\n  \"nickname\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f9952ca0-843e-42f5-9fa7-2d7f95fb2afe",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"provider_name\": \"<string>\",\n  \"bank_account_name\": \"<string>\",\n  \"bank_account_id\": \"<string>\",\n  \"bank_account_number\": \"<string>\",\n  \"bank_account_type\": \"<string>\",\n  \"balance\": \"<number>\",\n  \"currency\": \"<string>\",\n  \"nickname\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "175e4a72-3b87-48ba-8b12-e3217288ccf9",
+          "name": "Delete bank integration",
+          "request": {
+            "name": "Delete bank integration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "81b2606d-018b-4df6-9387-ccdafbe215c5",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e27a5ead-6a20-41c3-b2b1-43133072fe7b",
+          "name": "Refresh bank accounts",
+          "request": {
+            "name": "Refresh bank accounts",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_integrations",
+                "refresh_accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25d25ceb-167f-4d4a-96f6-bfd5d925dd78",
+              "name": "Refresh result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_integrations",
+                    "refresh_accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://invoicing.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b4588daf-6766-4e0a-ba8f-a8df8a0b4bd5",
+    "name": "Invoice Ninja v5 Activities Bank Integrations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Invoice Ninja v5 invoicing and billing platform.\nEndpoints cover authentication, companies, gateways, charts, activities,\nbank integrations, bank transactions, bank transaction rules, and client\ngateway tokens. The full v5 API additionally exposes CRUD endpoints for\nclients, invoices, quotes, payments, products, recurring invoices,\ncredits, expenses, projects, tasks, and company settings.\nAuthentication is via an `X-Api-Token` header (with an optional\n`X-Api-Secret` header for self-hosted installs).\n\n\nContact Support:\n Name: Invoice Ninja",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "item": [
+    {
+      "id": "e5af8360-b62a-44e5-8eb5-deca42035037",
+      "name": "Settings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "33c50812-82b5-4980-8012-18d89799c2c1",
+          "name": "List passkeys",
+          "request": {
+            "name": "List passkeys",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "settings",
+                "passkeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9476017e-1667-4005-9945-b5b76fa4c8ef",
+              "name": "Passkey list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "settings",
+                    "passkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "665584fc-d48c-4d1c-9a2b-8365b9d7105d",
+          "name": "Register a passkey",
+          "request": {
+            "name": "Register a passkey",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "settings",
+                "passkeys"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bbf33671-7611-478e-b4ff-9e3217f0f8aa",
+              "name": "Passkey created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "settings",
+                    "passkeys"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://invoicing.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c238f8ce-774b-456f-9866-f91e9bb0d2c6",
+    "name": "Invoice Ninja v5 Activities Settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Invoice Ninja v5 invoicing and billing platform.\nEndpoints cover authentication, companies, gateways, charts, activities,\nbank integrations, bank transactions, bank transaction rules, and client\ngateway tokens. The full v5 API additionally exposes CRUD endpoints for\nclients, invoices, quotes, payments, products, recurring invoices,\ncredits, expenses, projects, tasks, and company settings.\nAuthentication is via an `X-Api-Token` header (with an optional\n`X-Api-Secret` header for self-hosted installs).\n\n\nContact Support:\n Name: Invoice Ninja",
+      "type": "text/plain"
+    }
+  }
+}

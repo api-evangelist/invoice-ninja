@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Settings API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List passkeys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/settings/passkeys"
+          },
+          "docs": "List passkeys"
+        },
+        {
+          "info": {
+            "name": "Register a passkey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/settings/passkeys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register a passkey"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

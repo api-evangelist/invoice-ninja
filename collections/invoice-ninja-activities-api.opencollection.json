@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List activities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/activities"
+          },
+          "docs": "List activities"
+        },
+        {
+          "info": {
+            "name": "Download activity entity PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/activities/download_entity/:activity_id",
+            "params": [
+              {
+                "name": "activity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download activity entity PDF"
+        },
+        {
+          "info": {
+            "name": "Get entity activities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/activities/entity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get entity activities"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,417 @@
+{
+  "item": [
+    {
+      "id": "9edfa160-06ad-45e8-ba70-349d09259f1d",
+      "name": "Company Gateways",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6e62ccf1-fc37-475b-912a-490dae9c485f",
+          "name": "List company gateways",
+          "request": {
+            "name": "List company gateways",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "company_gateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "399d24fd-bd0e-4b3e-95c0-6ea7016034df",
+              "name": "Gateway list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "company_gateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daccf21a-9c15-470a-95d7-13b816dfefab",
+          "name": "Create company gateway",
+          "request": {
+            "name": "Create company gateway",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "company_gateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"gateway_key\": \"<string>\",\n  \"accepted_credit_cards\": \"<integer>\",\n  \"require_billing_address\": \"<boolean>\",\n  \"require_shipping_address\": \"<boolean>\",\n  \"update_details\": \"<boolean>\",\n  \"config\": \"<string>\",\n  \"fees_and_limits\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6ccd8b71-3645-411e-acf8-ab8b83b9a50f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "company_gateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"gateway_key\": \"<string>\",\n  \"accepted_credit_cards\": \"<integer>\",\n  \"require_billing_address\": \"<boolean>\",\n  \"require_shipping_address\": \"<boolean>\",\n  \"update_details\": \"<boolean>\",\n  \"config\": \"<string>\",\n  \"fees_and_limits\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2135d31a-962f-4921-9e28-7ea60f7140a0",
+          "name": "Get company gateway",
+          "request": {
+            "name": "Get company gateway",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "company_gateways",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfded452-0a42-4f01-9bf3-c1434ed1fd86",
+              "name": "Gateway",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "company_gateways",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"gateway_key\": \"string\",\n  \"accepted_credit_cards\": 5427,\n  \"require_billing_address\": false,\n  \"require_shipping_address\": true,\n  \"update_details\": true,\n  \"config\": \"string\",\n  \"fees_and_limits\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b05c73d5-c369-4785-a4fc-02658a069143",
+          "name": "Update company gateway",
+          "request": {
+            "name": "Update company gateway",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "company_gateways",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"gateway_key\": \"<string>\",\n  \"accepted_credit_cards\": \"<integer>\",\n  \"require_billing_address\": \"<boolean>\",\n  \"require_shipping_address\": \"<boolean>\",\n  \"update_details\": \"<boolean>\",\n  \"config\": \"<string>\",\n  \"fees_and_limits\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9ff4b7a2-5ba7-44cc-b7c2-b268009963d6",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "company_gateways",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"gateway_key\": \"<string>\",\n  \"accepted_credit_cards\": \"<integer>\",\n  \"require_billing_address\": \"<boolean>\",\n  \"require_shipping_address\": \"<boolean>\",\n  \"update_details\": \"<boolean>\",\n  \"config\": \"<string>\",\n  \"fees_and_limits\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://invoicing.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "48240798-dc9c-4169-b904-53701b62f5b0",
+    "name": "Invoice Ninja v5 Activities Company Gateways API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Invoice Ninja v5 invoicing and billing platform.\nEndpoints cover authentication, companies, gateways, charts, activities,\nbank integrations, bank transactions, bank transaction rules, and client\ngateway tokens. The full v5 API additionally exposes CRUD endpoints for\nclients, invoices, quotes, payments, products, recurring invoices,\ncredits, expenses, projects, tasks, and company settings.\nAuthentication is via an `X-Api-Token` header (with an optional\n`X-Api-Secret` header for self-hosted installs).\n\n\nContact Support:\n Name: Invoice Ninja",
+      "type": "text/plain"
+    }
+  }
+}

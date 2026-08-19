@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Authentication API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Login"
+        },
+        {
+          "info": {
+            "name": "Refresh data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/refresh",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Refresh data by timestamp."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Bank Integrations API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bank Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bank integrations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_integrations"
+          },
+          "docs": "List bank integrations"
+        },
+        {
+          "info": {
+            "name": "Create bank integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/bank_integrations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bank integration"
+        },
+        {
+          "info": {
+            "name": "Get bank integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_integrations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get bank integration"
+        },
+        {
+          "info": {
+            "name": "Update bank integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://invoicing.co/api/v1/bank_integrations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update bank integration"
+        },
+        {
+          "info": {
+            "name": "Delete bank integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://invoicing.co/api/v1/bank_integrations/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete bank integration"
+        },
+        {
+          "info": {
+            "name": "Refresh bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/bank_integrations/refresh_accounts"
+          },
+          "docs": "Refresh bank accounts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

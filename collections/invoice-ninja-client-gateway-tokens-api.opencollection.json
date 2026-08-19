@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Client Gateway Tokens API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Client Gateway Tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List client gateway tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/client_gateway_tokens"
+          },
+          "docs": "List client gateway tokens"
+        },
+        {
+          "info": {
+            "name": "Create client gateway token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/client_gateway_tokens",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create client gateway token"
+        },
+        {
+          "info": {
+            "name": "Get client gateway token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/client_gateway_tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get client gateway token"
+        },
+        {
+          "info": {
+            "name": "Update client gateway token",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://invoicing.co/api/v1/client_gateway_tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update client gateway token"
+        },
+        {
+          "info": {
+            "name": "Delete client gateway token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://invoicing.co/api/v1/client_gateway_tokens/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete client gateway token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

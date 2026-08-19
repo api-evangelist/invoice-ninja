@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Bank Transactions API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bank Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bank transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_transactions"
+          },
+          "docs": "List bank transactions"
+        },
+        {
+          "info": {
+            "name": "Create bank transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/bank_transactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bank transaction"
+        },
+        {
+          "info": {
+            "name": "Get bank transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/bank_transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get bank transaction"
+        },
+        {
+          "info": {
+            "name": "Update bank transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://invoicing.co/api/v1/bank_transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update bank transaction"
+        },
+        {
+          "info": {
+            "name": "Delete bank transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://invoicing.co/api/v1/bank_transactions/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete bank transaction"
+        },
+        {
+          "info": {
+            "name": "Match bank transactions to invoices/payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/bank_transactions/match",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Match bank transactions to invoices/payments"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

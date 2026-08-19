@@ -1,0 +1,504 @@
+{
+  "item": [
+    {
+      "id": "2d76c9a9-b6bd-44c6-a344-3ecdfb1a4297",
+      "name": "Bank Transaction Rules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9cf46c7c-a565-451d-8db6-1f5b7dfbcdf4",
+          "name": "List bank transaction rules",
+          "request": {
+            "name": "List bank transaction rules",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_transaction_rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "725bacd5-167f-41d2-a0ef-438a2bbb5767",
+              "name": "Rule list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_transaction_rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a58f657-fc6a-4a40-8a6f-8199c3bd0509",
+          "name": "Create bank transaction rule",
+          "request": {
+            "name": "Create bank transaction rule",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_transaction_rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"auto_convert\": \"<boolean>\",\n  \"matches_on_all\": \"<boolean>\",\n  \"applies_to\": \"<string>\",\n  \"client_id\": \"<string>\",\n  \"vendor_id\": \"<string>\",\n  \"category_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c8de9e3-0003-4ea6-b0bf-d2bb122486e5",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_transaction_rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"auto_convert\": \"<boolean>\",\n  \"matches_on_all\": \"<boolean>\",\n  \"applies_to\": \"<string>\",\n  \"client_id\": \"<string>\",\n  \"vendor_id\": \"<string>\",\n  \"category_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17956996-2acf-4a43-a9f8-df26f51d0d73",
+          "name": "Get rule",
+          "request": {
+            "name": "Get rule",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_transaction_rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1ea7abb-ef5b-4a36-95cc-4658eef9959b",
+              "name": "Rule",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_transaction_rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"rules\": [\n    {\n      \"search_key\": \"string\",\n      \"operator\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"search_key\": \"string\",\n      \"operator\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"auto_convert\": false,\n  \"matches_on_all\": false,\n  \"applies_to\": \"DEBIT\",\n  \"client_id\": \"string\",\n  \"vendor_id\": \"string\",\n  \"category_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8702973-54b6-4bb5-93d4-2dc0c5dc0c6a",
+          "name": "Update rule",
+          "request": {
+            "name": "Update rule",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_transaction_rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"auto_convert\": \"<boolean>\",\n  \"matches_on_all\": \"<boolean>\",\n  \"applies_to\": \"<string>\",\n  \"client_id\": \"<string>\",\n  \"vendor_id\": \"<string>\",\n  \"category_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "177a7f59-0319-40b8-b250-f9b146549220",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_transaction_rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"rules\": [\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"search_key\": \"<string>\",\n      \"operator\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"auto_convert\": \"<boolean>\",\n  \"matches_on_all\": \"<boolean>\",\n  \"applies_to\": \"<string>\",\n  \"client_id\": \"<string>\",\n  \"vendor_id\": \"<string>\",\n  \"category_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e83598b8-81b0-44ce-895b-4ed060592cb1",
+          "name": "Delete rule",
+          "request": {
+            "name": "Delete rule",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "bank_transaction_rules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d67d723-6bcb-4104-bffc-58fcda07e77d",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "bank_transaction_rules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://invoicing.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "21fdb80d-3c32-4ee0-9db9-fe10a1ff9755",
+    "name": "Invoice Ninja v5 Activities Bank Transaction Rules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Invoice Ninja v5 invoicing and billing platform.\nEndpoints cover authentication, companies, gateways, charts, activities,\nbank integrations, bank transactions, bank transaction rules, and client\ngateway tokens. The full v5 API additionally exposes CRUD endpoints for\nclients, invoices, quotes, payments, products, recurring invoices,\ncredits, expenses, projects, tasks, and company settings.\nAuthentication is via an `X-Api-Token` header (with an optional\n`X-Api-Secret` header for self-hosted installs).\n\n\nContact Support:\n Name: Invoice Ninja",
+      "type": "text/plain"
+    }
+  }
+}

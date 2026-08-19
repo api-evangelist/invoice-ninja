@@ -1,0 +1,149 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Invoice Ninja v5 Activities Companies API",
+    "version": "5.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Api-Token",
+      "value": "{{X-Api-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Companies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List companies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/companies"
+          },
+          "docs": "List companies"
+        },
+        {
+          "info": {
+            "name": "Create company",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/companies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create company"
+        },
+        {
+          "info": {
+            "name": "Get company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://invoicing.co/api/v1/companies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get company"
+        },
+        {
+          "info": {
+            "name": "Update company",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://invoicing.co/api/v1/companies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update company"
+        },
+        {
+          "info": {
+            "name": "Delete company",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://invoicing.co/api/v1/companies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete company"
+        },
+        {
+          "info": {
+            "name": "Upload company documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/companies/:id/upload",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "documents",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload company documents"
+        },
+        {
+          "info": {
+            "name": "Get current company",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://invoicing.co/api/v1/companies/current"
+          },
+          "docs": "Get current company"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
