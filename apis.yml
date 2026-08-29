@@ -9,6 +9,18 @@ description: >-
   expenses, projects, and tasks, authenticated with an API token
   (plus an optional secret) passed via HTTP headers.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
