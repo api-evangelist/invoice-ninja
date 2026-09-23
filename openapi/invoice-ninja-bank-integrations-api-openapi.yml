@@ -1,23 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Invoice Ninja v5 Activities Bank Integrations API
-  description: 'REST API for the Invoice Ninja v5 invoicing and billing platform.
-
-    Endpoints cover authentication, companies, gateways, charts, activities,
-
-    bank integrations, bank transactions, bank transaction rules, and client
-
-    gateway tokens. The full v5 API additionally exposes CRUD endpoints for
-
-    clients, invoices, quotes, payments, products, recurring invoices,
-
-    credits, expenses, projects, tasks, and company settings.
-
-    Authentication is via an `X-Api-Token` header (with an optional
-
-    `X-Api-Secret` header for self-hosted installs).
-
-    '
+  title: Invoice Ninja v5 Bank Integrations API
+  description: REST API for the Invoice Ninja v5 invoicing and billing platform.
   version: '5.0'
   contact:
     name: Invoice Ninja
@@ -100,6 +84,13 @@ paths:
         '200':
           description: Refresh result
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     BankIntegration:
       type: object
@@ -122,13 +113,6 @@ components:
           type: string
         nickname:
           type: string
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     apiToken:
       type: apiKey
