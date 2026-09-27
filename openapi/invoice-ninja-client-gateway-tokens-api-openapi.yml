@@ -75,13 +75,6 @@ paths:
         '204':
           description: Deleted
 components:
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     ClientGatewayToken:
       type: object
@@ -100,6 +93,13 @@ components:
           type: string
         is_default:
           type: boolean
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     apiToken:
       type: apiKey

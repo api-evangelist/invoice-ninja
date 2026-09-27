@@ -40,9 +40,9 @@ tags:
   - Billing
   - Payments
   - Accounting
-  - Open-Source
+  - Open Source
   - Freelancers
-  - SMB
+  - Small Business
 tags_raw:
   - Invoicing
   - Billing
@@ -51,6 +51,7 @@ tags_raw:
   - Open Source
   - Freelancers
   - SMB
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/invoice-ninja/refs/heads/main/apis.yml
 created: '2026-05-11'
