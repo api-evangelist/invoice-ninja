@@ -120,13 +120,6 @@ paths:
                 $ref: '#/components/schemas/Company'
 components:
   schemas:
-    CompanyList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Company'
     Company:
       type: object
       properties:
@@ -148,6 +141,13 @@ components:
           type: string
         portal_domain:
           type: string
+    CompanyList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Company'
   parameters:
     Id:
       name: id
