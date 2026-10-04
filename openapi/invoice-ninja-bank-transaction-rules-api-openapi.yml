@@ -75,13 +75,6 @@ paths:
         '204':
           description: Deleted
 components:
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     BankTransactionRule:
       type: object
@@ -116,6 +109,13 @@ components:
           type: string
         category_id:
           type: string
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     apiToken:
       type: apiKey
