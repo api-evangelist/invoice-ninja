@@ -35,6 +35,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/invoice-ninja.png
+x-docs-platform: redocly
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
   - Invoicing
   - Billing
@@ -221,6 +224,9 @@ apis:
   - type: APIReference
     url: https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference
 common:
+  - type: CapabilityMap
+    url: capabilities/invoice-ninja-capability-edges.yml
+    name: Invoice Ninja Business Capability Map
   - type: AgenticAccess
     url: agentic-access/invoice-ninja-agentic-access.yml
   - type: DomainSecurity
