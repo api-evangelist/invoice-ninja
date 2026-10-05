@@ -1,0 +1,26 @@
+slug: invoice-ninja
+provider: Invoice Ninja
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Settings
+  spec_file: invoice-ninja-settings-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: GET /api/v1/settings/passkeys listPasskeys; POST /api/v1/settings/passkeys createPasskey 'Register
+    a passkey'
+  reason: Despite the generic 'Settings' tag, the only operations manage WebAuthn passkey credentials
+    for user sign-in, which is authentication credential lifecycle, i.e. Identity & Access Management.
+    Small surface, so not maximal confidence.
