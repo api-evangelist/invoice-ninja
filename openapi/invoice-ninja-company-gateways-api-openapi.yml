@@ -67,6 +67,13 @@ paths:
         '200':
           description: Updated
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     CompanyGateway:
       type: object
@@ -87,13 +94,6 @@ components:
           type: string
         fees_and_limits:
           type: object
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     apiToken:
       type: apiKey

@@ -104,6 +104,13 @@ paths:
         '200':
           description: Match result
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     BankTransaction:
       type: object
@@ -132,13 +139,6 @@ components:
           type: string
         expense_id:
           type: string
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     apiToken:
       type: apiKey

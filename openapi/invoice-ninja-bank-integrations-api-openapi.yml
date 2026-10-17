@@ -84,6 +84,13 @@ paths:
         '200':
           description: Refresh result
 components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     BankIntegration:
       type: object
@@ -106,13 +113,6 @@ components:
           type: string
         nickname:
           type: string
-  parameters:
-    Id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     apiToken:
       type: apiKey
