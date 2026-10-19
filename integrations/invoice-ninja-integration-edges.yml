@@ -25,8 +25,51 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Stripe Partner Ecosystem
+  partner: stripe
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://stripe.partners/directory/invoiceninja
+  category: billing / subscription partner of Stripe
+  contract_reference:
+    register: Stripe Partner Ecosystem directory (stripe.partners, PartnerPage SSR __NUXT_DATA__)
+    standard: Stripe Partner Ecosystem
+    spec_file: null
+    role: stripe-partner
+    registered_name: Invoice Ninja
+    register_id: invoiceninja
+    partner_tier: null
+    matched_domain: invoiceninja.com
+    matched_by: domain
+    identity_source: the directory's own website field for the partner (no lookup)
+    signal_note: listing = participation; Stripe Certified Professional Developers certify PEOPLE at the firm (context,
+      never certified_products); partner_tier, callouts and products are never counted
+    context:
+      callouts:
+      - Accounting
+      stripe_products:
+      - Connect
+      - Payments
+      - Invoicing
+      - Radar
+      - Tax
+      - Revenue Recognition
+      - Capital
+      - Financial Connections
+      - Instant Payouts
+      - Link
+      - Radar for Fraud Teams
+      location: Fort Myers, United States
+    detected_by: sweep-billing-subscriptions.py
+    detected: '2026-10-19'
+  detected_by: sweep-billing-subscriptions.py
+  first_seen: '2026-10-19'
 method: searched
 checked:
+- https://stripe.partners/sitemap.xml
 - https://zapier.com/api/v4/apps/
 source:
 - https://zapier.com/api/v4/apps/
