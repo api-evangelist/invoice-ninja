@@ -1,4 +1,4 @@
-# Invoice Ninja (invoice-ninja)
+# Invoice Ninja
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,64 +66,117 @@
 
 Invoice Ninja is an open-source invoicing, billing, payments, and expense tracking platform for freelancers and small businesses, available both as a self-hosted application and a managed SaaS at invoicing.co. The Invoice Ninja v5 REST API exposes full CRUD access to clients, invoices, quotes, payments, products, recurring invoices, expenses, projects, and tasks, authenticated with an API token (plus an optional secret) passed via HTTP headers.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/invoice-ninja/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/invoice-ninja/refs/heads/main/apis.yml)
+**Areas:** Invoicing · Billing · Payments · Accounting · Open Source · Freelancers · Small Business
 
-## Scope
+## Invoice Ninja on APIs.io
 
-- **Type:** Index
+Everything profiled for Invoice Ninja is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/invoice-ninja/](https://apis.io/providers/invoice-ninja/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Invoicing
-- Billing
-- Payments
-- Accounting
-- Open Source
-- Freelancers
-- SMB
+- [Invoice Ninja Activities API](https://apis.io/apis/invoice-ninja/invoice-ninja-activities-api/) — The Activities API from Invoice Ninja — 3 operation(s) for activities.
+- [Invoice Ninja Authentication API](https://apis.io/apis/invoice-ninja/invoice-ninja-authentication-api/) — The Authentication API from Invoice Ninja — 2 operation(s) for authentication.
+- [Invoice Ninja Bank Integrations API](https://apis.io/apis/invoice-ninja/invoice-ninja-bank-integrations-api/) — The Bank Integrations API from Invoice Ninja — 3 operation(s) for bank integrations.
+- [Invoice Ninja Bank Transaction Rules API](https://apis.io/apis/invoice-ninja/invoice-ninja-bank-transaction-rules-api/) — The Bank Transaction Rules API from Invoice Ninja — 2 operation(s) for bank transaction rules.
+- [Invoice Ninja Bank Transactions API](https://apis.io/apis/invoice-ninja/invoice-ninja-bank-transactions-api/) — The Bank Transactions API from Invoice Ninja — 3 operation(s) for bank transactions.
+- [Invoice Ninja Charts API](https://apis.io/apis/invoice-ninja/invoice-ninja-charts-api/) — The Charts API from Invoice Ninja — 4 operation(s) for charts.
+- [Invoice Ninja Client Gateway Tokens API](https://apis.io/apis/invoice-ninja/invoice-ninja-client-gateway-tokens-api/) — The Client Gateway Tokens API from Invoice Ninja — 2 operation(s) for client gateway tokens.
+- [Invoice Ninja Companies API](https://apis.io/apis/invoice-ninja/invoice-ninja-companies-api/) — The Companies API from Invoice Ninja — 4 operation(s) for companies.
+- [Invoice Ninja Company Gateways API](https://apis.io/apis/invoice-ninja/invoice-ninja-company-gateways-api/) — The Company Gateways API from Invoice Ninja — 2 operation(s) for company gateways.
+- [Invoice Ninja Settings API](https://apis.io/apis/invoice-ninja/invoice-ninja-settings-api/) — The Settings API from Invoice Ninja — 1 operation(s) for settings.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Invoice Ninja v5 API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST API for the Invoice Ninja v5 platform covering clients, invoices, quotes, payments, products, recurring invoices, credits, expenses, projects, tasks, and company settings. Authentication is via an X-Api-Token header (with an optional X-Api-Secret for self-hosted installs).
+- [Invoice Ninja Agentic Access](https://apis.io/agentic-access/invoice-ninja/invoice-ninja-agentic-access/)
 
-- **Human URL:** [https://api-docs.invoicing.co](https://api-docs.invoicing.co)
-- **Base URL:** `https://invoicing.co`
+#### Collections (11)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Invoicing
-- Billing
-- Payments
-- Clients
-- Products
+- [Invoice Ninja v5 API](https://apis.io/collections/invoice-ninja/open-invoice-ninja/)
+- [Invoice Ninja v5 Activities API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-activities-api/)
+- [Invoice Ninja v5 Activities Authentication API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-authentication-api/)
+- [Invoice Ninja v5 Activities Bank Integrations API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-bank-integrations-api/)
+- [Invoice Ninja v5 Activities Bank Transaction Rules API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-bank-transaction-rules-api/)
+- [Invoice Ninja v5 Activities Bank Transactions API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-bank-transactions-api/)
+- [Invoice Ninja v5 Activities Charts API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-charts-api/)
+- [Invoice Ninja v5 Activities Client Gateway Tokens API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-client-gateway-tokens-api/)
+- [Invoice Ninja v5 Activities Companies API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-companies-api/)
+- [Invoice Ninja v5 Activities Company Gateways API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-company-gateways-api/)
+- [Invoice Ninja v5 Activities Settings API](https://apis.io/collections/invoice-ninja/open-invoice-ninja-settings-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://api-docs.invoicing.co)
-- [OpenAPI](https://app.swaggerhub.com/apis/invoiceninja/invoiceninja) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Developer  Guide](https://invoiceninja.github.io/en/developer-guide/)
-- [API Reference](https://invoiceninja.github.io/docs/api-reference/invoice-ninja-api-reference)
-- [Postman Collection](collections/invoice-ninja.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/invoice-ninja.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Invoice Ninja Authentication](https://apis.io/security/invoice-ninja/invoice-ninja-authentication/)
+- [Invoice Ninja Domain Security](https://apis.io/security/invoice-ninja/invoice-ninja-domain-security/)
 
-- [LinkedIn](https://www.linkedin.com/company/invoice-ninja)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.invoiceninja.com)
 - [Documentation](https://api-docs.invoicing.co)
 - [Pricing](https://www.invoiceninja.com/pricing/)
-- [Sign Up](https://app.invoicing.co/signup)
-- [GitHub Organization](https://github.com/invoiceninja)
-- [Source  Code](https://github.com/invoiceninja/invoiceninja)
+- [Blog](https://www.invoiceninja.com/blog/feed/)
+- [GitHub](https://github.com/invoiceninja)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 48.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 23.7 |
+
+**Agent readiness 17.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.7** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/invoice-ninja/](https://apis.io/providers/invoice-ninja/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Invoice Ninja: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/invoice-ninja/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
